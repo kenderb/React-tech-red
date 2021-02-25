@@ -1,0 +1,28 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  box-sizing: border-box;
+
+  --gray-one: #707070;
+  --gray-two: #42424210;
+  --black-one: #131313;
+  --primary-color: #fe4518;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Segoe UI;
+}
+
+img {
+  width: 100%;
+}
