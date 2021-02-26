@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { getTop10Catalog, filterCatalog } from '../actions';
 import NavFilter from '../components/NavFilter';
+import NavHeader from '../components/NavHeader';
 
 const Catalog = ({
   user, catalog, getTop10Catalog, filterCatalog,
@@ -26,6 +27,7 @@ const Catalog = ({
   if (catalog.data) {
     return (
       <>
+        <NavHeader />
         <NavFilter
           getTop10={handleTop10Catalog}
           onFilter={HadleAppsFilter}

@@ -1,0 +1,12 @@
+.header-container {
+  background-color: var(--primary-color);
+  padding: 1em;
+  display: flex;
+}
+.hamburguer-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin-right: 0.8em;
+  margin-left: auto;
+}
