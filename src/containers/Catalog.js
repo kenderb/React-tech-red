@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { getTop10Catalog, filterCatalog } from '../actions';
-import NavFilter from './NavFilter';
+import NavFilter from '../components/NavFilter';
 
 const Catalog = ({
   user, catalog, getTop10Catalog, filterCatalog,

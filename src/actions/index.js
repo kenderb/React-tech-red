@@ -32,13 +32,12 @@ export const getTop10Catalog = jwttoken => async dispatch => {
 
 export const filterCatalog = (jwttoken, category) => async dispatch => {
   try {
-    const response = await wonapp.get(`/products/search?page=${1}&per_page=${5}&category=${category}`,
+    const response = await wonapp.get(`/products/search?page=${1}&per_page=${10}&category=${category}`,
       {
         headers: {
           Authorization: `Bearer ${jwttoken}`,
         },
       });
-    console.log(response);
     dispatch(filterSuccess(response.data));
 
     return true;
