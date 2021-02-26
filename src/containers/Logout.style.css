@@ -12,6 +12,11 @@
   margin-top: 5em;
   letter-spacing: 0.1em;
 }
+
+
+.display-header {
+  display: block;
+}
 .logout-icon-container {
   display: flex;
   flex-direction: column;
@@ -21,6 +26,10 @@
   
 }
 
+.display-aside {
+  display: none;
+}
+
 .logout-icon-container img {
   width: 105.84px;
   height: 82.42px;
@@ -28,6 +37,7 @@
 }
 
 .logout-wrapper {
+  grid-area: logout;
   padding-top: 10em;
   display: flex;
   flex-direction: column;
@@ -38,5 +48,23 @@
 @media screen and (min-width: 1024px) {
   .display-header {
     display: none;
+  }
+  .logout-wrapper {
+    grid-area: catalog;
+    padding-top: 20em;
+    background-color: var(--bg-catalog-color);
+    height: 100vh;
+  }
+  .logout-main-wrapper {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-areas: 
+    "sideBar catalog "
+    "sideBar catalog"
+    "sideBar catalog";
+  }
+  .aside-bar {
+    grid-area: sideBar;
+    display: block;
   }
 }

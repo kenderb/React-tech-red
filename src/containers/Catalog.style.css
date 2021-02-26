@@ -47,6 +47,14 @@
   font-size: 14px;
   background-color: var(--primary-color);
 }
+.log-out-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+}
 
 @media screen and (min-width: 1024px) { 
   .catalog-list {

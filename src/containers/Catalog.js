@@ -57,7 +57,13 @@ const Catalog = ({
       </main>
     );
   }
-  return <h1>Loading..</h1>;
+  return (
+    <div className="log-out-wrapper">
+      <h1>
+        Loading...
+      </h1>
+    </div>
+  );
 };
 
 Catalog.propTypes = {

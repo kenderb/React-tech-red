@@ -6,6 +6,7 @@ import { logOutSucces } from '../actions';
 import './Logout.style.css';
 import LoggOutIcon from '../assets/images/LoggOutIcon.svg';
 import NavHeader from '../components/NavHeader';
+import AsideBar from '../components/AsideBar';
 
 const Logout = ({ user, logOutSucces }) => {
   const handleLogOut = () => {
@@ -16,10 +17,11 @@ const Logout = ({ user, logOutSucces }) => {
     return <Redirect to="/loging" />;
   }
   return (
-    <>
+    <main className="logout-main-wrapper">
       <div className="display-header">
         <NavHeader />
       </div>
+      <AsideBar />
       <div className="logout-wrapper">
         <div className="logout-icon-container">
           <img src={LoggOutIcon} alt={LoggOutIcon} />
@@ -27,7 +29,7 @@ const Logout = ({ user, logOutSucces }) => {
         </div>
         <button type="button" onClick={handleLogOut} className="logout-button">SI, CERRAR SESIÓN</button>
       </div>
-    </>
+    </main>
   );
 };
 
