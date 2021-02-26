@@ -11,30 +11,26 @@ const TopProducts = ({ user, top10, getCatalog }) => {
     getCatalog(jwttoken);
   }, [getCatalog]);
 
-  console.log('top10: ', top10.data);
-  console.log('user: ', user);
-  if (user.isLoggedIn) {
-    if (top10.data) {
-      return (
-        <>
-          <h1> Top list </h1>
-          <ul>
-            {
-              top10.data.map(product => (
-                <li key={product.id}>
-                  <img src={product.image.thumb.url} alt={product.image} />
-                  {product.name}
-                  <p>{product.value}</p>
-                </li>
-              ))
-            }
-          </ul>
-        </>
-      );
-    }
-    return <h1>Loading..</h1>;
+  if (!user.isLoggedIn) return <Redirect to="/loging" />;
+  if (top10.data) {
+    return (
+      <>
+        <h1> Top list </h1>
+        <ul>
+          {
+            top10.data.map(product => (
+              <li key={product.id}>
+                <img src={product.image.thumb.url} alt={product.image} />
+                {product.name}
+                <p>{product.value}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </>
+    );
   }
-  return <Redirect to="/loging" />;
+  return <h1>Loading..</h1>;
 };
 
 TopProducts.propTypes = {
