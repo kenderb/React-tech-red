@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { authUser } from '../actions';
 import logo from '../assets/images/logo.svg';
+import logoWhite from '../assets/images/logo_white.svg';
 import './Logo.style.css';
 
 const Login = ({ user, authUser }) => {
@@ -17,7 +18,8 @@ const Login = ({ user, authUser }) => {
 
   if (user.isLoggedIn) return <Redirect to="/" />;
   return (
-    <main>
+    <main className="login-page-container">
+      <img src={logoWhite} alt={logoWhite} className="side-logo" />
       <form onSubmit={e => handelSubmit(e)} className="login-form">
         <img src={logo} alt={logo} />
         <p>Iniciar sesión</p>

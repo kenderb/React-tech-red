@@ -10,6 +10,9 @@
   width: 78.94px;
   height: 33.86px;
 }
+.side-logo {
+  display: none;
+}
 
 .login-form p {
   color: var(--gray-one);
@@ -67,4 +70,25 @@
   color: white;
   background-color: var(--primary-color);
   box-shadow: -3px 7px 6px var(--shadow-color);
+}
+
+@media screen and (min-width: 768px) {
+  .side-logo {
+    display: block;
+  }
+  .login-page-container {
+    margin: auto;
+    display: flex;
+  }
+  .login-form {
+    width: 497.7px;
+    height: 581px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+  }
+  .login-form img {
+    display: none;
+  }
+  body {
+    background-color: red;
+  }
 }

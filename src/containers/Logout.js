@@ -6,7 +6,6 @@ import { logOutSucces } from '../actions';
 
 const Logout = ({ user, logOutSucces }) => {
   const handleLogOut = () => {
-    console.log('??');
     logOutSucces();
   };
 
