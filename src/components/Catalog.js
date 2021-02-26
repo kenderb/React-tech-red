@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { getCatalog } from '../actions';
+import { getTop10Catalog } from '../actions';
 
-const TopProducts = ({ user, top10, getCatalog }) => {
+const Catalog = ({ user, top10, getTop10Catalog }) => {
   const { jwttoken } = user.user;
 
   useEffect(() => {
-    getCatalog(jwttoken);
-  }, [getCatalog]);
+    getTop10Catalog(jwttoken);
+  }, [getTop10Catalog]);
 
   if (!user.isLoggedIn) return <Redirect to="/loging" />;
   if (top10.data) {
@@ -33,13 +33,13 @@ const TopProducts = ({ user, top10, getCatalog }) => {
   return <h1>Loading..</h1>;
 };
 
-TopProducts.propTypes = {
+Catalog.propTypes = {
   top10: PropTypes.instanceOf(Object),
   user: PropTypes.instanceOf(Object).isRequired,
-  getCatalog: PropTypes.func.isRequired,
+  getTop10Catalog: PropTypes.func.isRequired,
 };
 
-TopProducts.defaultProps = {
+Catalog.defaultProps = {
   top10: { data: [] },
 };
 
@@ -48,4 +48,4 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
-export default connect(mapStateToProps, { getCatalog })(TopProducts);
+export default connect(mapStateToProps, { getTop10Catalog })(Catalog);

@@ -15,7 +15,7 @@ export const authUser = authentication => async dispatch => {
   }
 };
 
-export const getCatalog = jwttoken => async dispatch => {
+export const getTop10Catalog = jwttoken => async dispatch => {
   try {
     const response = await wonapp.get('/products/top', {
       headers: {
