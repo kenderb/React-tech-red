@@ -2,7 +2,7 @@ import wonapp from '../api/wonapp';
 
 import {
   authSuccess, top10Succes,
-  logOutUser,
+  logOutUser, filterSuccess,
 } from './actionTypes';
 
 export const authUser = authentication => async dispatch => {
@@ -32,9 +32,6 @@ export const getTop10Catalog = jwttoken => async dispatch => {
 
 export const filterCatalog = (jwttoken, category) => async dispatch => {
   try {
-    console.log(category);
-    console.log(jwttoken);
-    console.log(dispatch);
     const response = await wonapp.get(`/products/search?page=${1}&per_page=${5}&category=${category}`,
       {
         headers: {
@@ -42,7 +39,7 @@ export const filterCatalog = (jwttoken, category) => async dispatch => {
         },
       });
     console.log(response);
-    // dispatch(top10Succes(response.data));
+    dispatch(filterSuccess(response.data));
 
     return true;
   } catch (error) {

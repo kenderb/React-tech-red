@@ -20,7 +20,7 @@ const Catalog = ({
 
   const HadleAppsFilter = category => {
     filterCatalog(jwttoken, category);
-    console.log('App filter');
+    console.log('filter', category);
   };
 
   if (!user.isLoggedIn) return <Redirect to="/loging" />;
