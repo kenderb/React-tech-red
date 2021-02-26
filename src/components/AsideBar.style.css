@@ -1,0 +1,45 @@
+
+.aside-bar {
+  width: 270px;
+  display: none;
+  background: transparent linear-gradient(180deg, var(--primary-color) 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #FE4518 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
+}
+.aside-bar ul {
+  margin-left: 1em;
+  list-style: none;
+}
+
+.main-image-container {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.main-logo {
+  margin: auto;
+  width: 95px;
+}
+
+@media screen and (min-width: 1024px) { 
+  .aside-bar {
+    display: block;
+    grid-area: sideBar;
+  }
+  .item-container {
+    padding: 1em;
+  }
+  .item-container a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .item-container p {
+    margin-left: 1em;
+  }
+  .item-container img {
+    width: 30px;
+    height: 30px;
+  }
+}

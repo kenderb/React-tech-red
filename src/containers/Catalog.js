@@ -6,6 +6,7 @@ import { getTop10Catalog, filterCatalog } from '../actions';
 import NavFilter from '../components/NavFilter';
 import NavHeader from '../components/NavHeader';
 import './Catalog.style.css';
+import AsideBar from '../components/AsideBar';
 
 const Catalog = ({
   user, catalog, getTop10Catalog, filterCatalog,
@@ -27,12 +28,13 @@ const Catalog = ({
   if (!user.isLoggedIn) return <Redirect to="/loging" />;
   if (catalog.data) {
     return (
-      <>
+      <main className="main-content">
         <NavHeader />
         <NavFilter
           getTop10={handleTop10Catalog}
           onFilter={HadleAppsFilter}
         />
+        <AsideBar />
         <ul className="catalog-list">
           {
             catalog.data.map(product => (
@@ -52,7 +54,7 @@ const Catalog = ({
             ))
           }
         </ul>
-      </>
+      </main>
     );
   }
   return <h1>Loading..</h1>;

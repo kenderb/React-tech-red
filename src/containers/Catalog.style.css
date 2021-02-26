@@ -1,3 +1,4 @@
+
 .catalog-list {
   background-color: var(--bg-catalog-color);
   display: grid;
@@ -5,7 +6,7 @@
   grid-template-rows: 150px;
   grid-gap: 1.5em;
   padding: 2em;
-  height: 100vh;
+  height: 94.3vh;
   list-style: none;
   overflow: hidden;
 }
@@ -64,12 +65,21 @@
 
   .title-text { 
     font-size: 20px;
-    margin-top: -1.5em;
+    margin-top: -0.5em;
   }
   .product-price {
     padding-bottom: 3em;
   }
   .product-header-container img {
     margin-top: 0.2em;
+  }
+  .main-content {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-areas: 
+    "sideBar header "
+    "sideBar catalog"
+    "sideBar catalog";
   }
 }
