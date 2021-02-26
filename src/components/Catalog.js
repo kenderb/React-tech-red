@@ -2,23 +2,38 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { getTop10Catalog } from '../actions';
+import { getTop10Catalog, filterCatalog } from '../actions';
+import NavFilter from './NavFilter';
 
-const Catalog = ({ user, top10, getTop10Catalog }) => {
+const Catalog = ({
+  user, catalog, getTop10Catalog, filterCatalog,
+}) => {
   const { jwttoken } = user.user;
 
   useEffect(() => {
     getTop10Catalog(jwttoken);
   }, [getTop10Catalog]);
 
+  const handleTop10Catalog = () => {
+    getTop10Catalog(jwttoken);
+  };
+
+  const HadleAppsFilter = category => {
+    filterCatalog(jwttoken, category);
+    console.log('App filter');
+  };
+
   if (!user.isLoggedIn) return <Redirect to="/loging" />;
-  if (top10.data) {
+  if (catalog.data) {
     return (
       <>
-        <h1> Top list </h1>
+        <NavFilter
+          getTop10={handleTop10Catalog}
+          onFilter={HadleAppsFilter}
+        />
         <ul>
           {
-            top10.data.map(product => (
+            catalog.data.map(product => (
               <li key={product.id}>
                 <img src={product.image.thumb.url} alt={product.image} />
                 {product.name}
@@ -34,18 +49,19 @@ const Catalog = ({ user, top10, getTop10Catalog }) => {
 };
 
 Catalog.propTypes = {
-  top10: PropTypes.instanceOf(Object),
+  catalog: PropTypes.instanceOf(Object),
   user: PropTypes.instanceOf(Object).isRequired,
   getTop10Catalog: PropTypes.func.isRequired,
+  filterCatalog: PropTypes.func.isRequired,
 };
 
 Catalog.defaultProps = {
-  top10: { data: [] },
+  catalog: { data: [] },
 };
 
 const mapStateToProps = state => ({
-  top10: state.top10,
+  catalog: state.catalog,
   user: state.user,
 });
 
-export default connect(mapStateToProps, { getTop10Catalog })(Catalog);
+export default connect(mapStateToProps, { getTop10Catalog, filterCatalog })(Catalog);
