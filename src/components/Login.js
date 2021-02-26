@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { authUser } from '../actions';
 
-const Login = ({ authUser }) => {
+const Login = ({ user, authUser }) => {
   const [type, setType] = useState('User');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,6 +13,10 @@ const Login = ({ authUser }) => {
     e.preventDefault();
     authUser({ email, password, type });
   };
+
+  if (user.isLoggedIn) {
+    return <Redirect to="/" />;
+  }
   return (
     <main>
       <form onSubmit={e => handelSubmit(e)}>
@@ -26,6 +31,11 @@ const Login = ({ authUser }) => {
 
 Login.propTypes = {
   authUser: PropTypes.func.isRequired,
+  user: PropTypes.instanceOf(Object).isRequired,
 };
 
-export default connect(null, { authUser })(Login);
+const mapStateToProps = state => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps, { authUser })(Login);

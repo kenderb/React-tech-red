@@ -1,7 +1,8 @@
 import { AUTH_SUCCESS } from '../actions/constans';
 
+const localToken = JSON.parse(window.localStorage.getItem('authUser'));
 const authState = {
-  isLoggedIn: false,
+  isLoggedIn: !!localToken,
   user: {
     name: '',
     jwttoken: '',
