@@ -42,7 +42,34 @@
   text-align: center;
   width: 100%;
   padding: 0.5em 0 0.5em 0;
-  color: rgba(255, 255, 255, 0.829);
+  color: #ffffffd3;
   font-size: 14px;
   background-color: var(--primary-color);
+}
+
+@media screen and (min-width: 1024px) { 
+  .catalog-list {
+    grid-template-columns: repeat(5, 242px);
+    grid-template-rows: 282px;
+    grid-gap: 2em;
+  }
+  .catalog-list li {
+    height: 282px;
+  }
+
+  .product-footer {
+    margin-top: auto;
+    font-size: 20px;
+  }
+
+  .title-text { 
+    font-size: 20px;
+    margin-top: -1.5em;
+  }
+  .product-price {
+    padding-bottom: 3em;
+  }
+  .product-header-container img {
+    margin-top: 0.2em;
+  }
 }

@@ -12,3 +12,9 @@
   margin-right: 0.8em;
   margin-left: auto;
 }
+
+@media screen and (min-width: 1024px) { 
+  .header-container {
+    display: none;
+  }
+}
