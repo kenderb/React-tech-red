@@ -11,8 +11,7 @@ const authState = {
 const userReducer = (state = authState, action) => {
   switch (action.type) {
     case AUTH_SUCESS:
-      localStorage.setItem('authUser', JSON.stringify({ name: action.payload.data.type, jwttoken: action.payload.data.token }));
-      console.log('Action: ', action);
+      localStorage.setItem('authUser', JSON.stringify({ jwttoken: action.payload.data.token }));
       return {
         ...state,
         isLoggedIn: true,

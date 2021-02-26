@@ -9,7 +9,6 @@ export const authUser = authentication => async dispatch => {
   try {
     dispatch(dataLoading());
     const response = await wonapp.post('/login', authentication);
-    console.log(response.data);
     dispatch(authSuccess(response.data));
     return true;
   } catch (error) {
@@ -22,5 +21,4 @@ export const authUser = authentication => async dispatch => {
 
 export const getCatalog = () => async dispatch => {
   console.log(dispatch);
-  return true;
 };

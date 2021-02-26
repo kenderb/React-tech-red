@@ -1,21 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { authUser } from '../actions';
 
 const Login = ({ user, authUser }) => {
-  const userRef = useRef(null);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  const [type, setType] = useState('User');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handelSubmit = e => {
     e.preventDefault();
-    const type = userRef.current.value;
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    console.log('user', userRef.current.value);
-    console.log('email', emailRef.current.value);
-    console.log('password', passwordRef.current.value);
+    console.log('user', type);
+    console.log('email', email);
+    console.log('password', password);
     authUser({ email, password, type });
     console.log('summiting..');
   };
@@ -23,9 +20,9 @@ const Login = ({ user, authUser }) => {
   return (
     <main>
       <form onSubmit={e => handelSubmit(e)}>
-        <input ref={userRef} type="text" placeholder="User name" value="User" />
-        <input ref={emailRef} type="email" placeholder="email" />
-        <input ref={passwordRef} type="password" placeholder="password" />
+        <input onChange={e => setType(e.target.value)} type="text" placeholder="User name" value="User" />
+        <input onChange={e => setEmail(e.target.value)} type="email" placeholder="email" />
+        <input onChange={e => setPassword(e.target.value)} type="password" placeholder="password" />
         <button type="submit">Login</button>
       </form>
     </main>
