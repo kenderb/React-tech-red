@@ -72,17 +72,25 @@
   box-shadow: -3px 7px 6px var(--shadow-color);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .side-logo {
+    width: 376px;
+    height: 161px;
     display: block;
   }
   .login-page-container {
+    height: 50%;
+    max-width: 80%;
     margin: auto;
     display: flex;
+    margin-top: 9%;
+    align-items: center;
+    justify-content: space-around;
   }
   .login-form {
     width: 497.7px;
     height: 581px;
+    padding: 3em 0 3em 0;
     background: #FFFFFF 0% 0% no-repeat padding-box;
   }
   .login-form img {
@@ -91,5 +99,22 @@
   body {
     background-color: red;
     background-image: url('../assets/images/fondologin2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .coloredButton, .simpleButton {
+    
+    width: 306px;
+    height: 51px;
+    
+  }
+  .coloredButton {
+    background: transparent linear-gradient(91deg, var(--primary-colo) 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(91deg, #FE4518 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
+    box-shadow: none;
+  }
+  .login-form a {
+    color: #1592E6;
   }
 }
