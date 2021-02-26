@@ -6,7 +6,7 @@
   box-shadow: -3px 10px 6px var(--shadow-color);
 }
 
-.list-container button {
+.normal-button {
   color: var(--black-two);
   font-size: 0.9em;
   text-transform: uppercase;
@@ -18,5 +18,5 @@
 }
 
 .actived-button {
-  border-bottom: 1px var(--primary-color)solid;
+  border-bottom: 1px var(--primary-color) solid;
 }
