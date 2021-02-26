@@ -6,8 +6,9 @@
 }
 
 .login-form img {
-  margin: 3.5em 0 2em;
+  margin: 3.5em 0 2em 0;
   width: 78.94px;
+  height: 33.86px;
 }
 
 .login-form p {
@@ -48,6 +49,8 @@
 }
 
 .coloredButton, .simpleButton {
+  border: var(--gray-one) 1px solid;
+  border-radius: 2px;
   color: var(--gray-one);
   text-transform: uppercase;
   font-weight: bold;
@@ -58,6 +61,10 @@
 }
 
 .coloredButton {
+  letter-spacing: 2px;
+  border: none;
+  font-weight: normal;
   color: white;
   background-color: var(--primary-color);
+  box-shadow: -3px 7px 6px var(--shadow-color);
 }
