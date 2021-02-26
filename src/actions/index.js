@@ -2,6 +2,7 @@ import wonapp from '../api/wonapp';
 
 import {
   authSuccess, top10Succes,
+  logOutUser,
 } from './actionTypes';
 
 export const authUser = authentication => async dispatch => {
@@ -28,3 +29,5 @@ export const getCatalog = jwttoken => async dispatch => {
     return error.messages;
   }
 };
+
+export const logOutSucces = () => (logOutUser());

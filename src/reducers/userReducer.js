@@ -1,4 +1,4 @@
-import { AUTH_SUCCESS } from '../actions/constans';
+import { AUTH_SUCCESS, LOGOUT_USER } from '../actions/constans';
 
 const localToken = JSON.parse(window.localStorage.getItem('authUser'));
 const authState = {
@@ -21,7 +21,16 @@ const userReducer = (state = authState, action) => {
           jwttoken: action.payload.data.token,
         },
       };
-
+    case LOGOUT_USER:
+      localStorage.removeItem('authUser');
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: {
+          name: '',
+          jwttoken: '',
+        },
+      };
     default:
       return state;
   }
