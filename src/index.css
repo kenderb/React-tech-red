@@ -24,6 +24,7 @@
 
 body {
   font-family: Segoe UI;
+  background-color: var(--bg-catalog-color);
 }
 
 img {

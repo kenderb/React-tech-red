@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './NavFilter.style.css';
+import moneyIcon from '../assets/images/moneyIcon.svg';
+import magnifyingGlass from '../assets/images/magnifyingGlass.svg';
 
 const filterList = [
   {
@@ -53,11 +55,18 @@ const NavFilter = ({ getTop10, onFilter }) => {
             </button>
           </li>
         ))}
-        <li className="desktop-filter-button">
-          <button type="button"> orange button</button>
+        <li className="desktop-filter-button aling-rigth">
+          <button type="button" className="orange-button">
+            <img src={moneyIcon} alt={moneyIcon} className="money-icon" />
+            <p>
+              $ 100.000
+            </p>
+          </button>
         </li>
         <li className="desktop-filter-button">
-          <button type="button"> maginify glass</button>
+          <button type="button" className="magnifying-Glass">
+            <img src={magnifyingGlass} alt={magnifyingGlass} />
+          </button>
         </li>
       </ul>
     </nav>

@@ -6,7 +6,7 @@
   background: transparent linear-gradient(180deg, #FE4518 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
 }
 .aside-bar ul {
-  margin-left: 1em;
+  margin-left: 2.5em;
   list-style: none;
 }
 
@@ -29,7 +29,7 @@
     padding: 1em;
   }
   .item-container a {
-    color: white;
+    color: #ffffffc2;
     text-decoration: none;
     display: flex;
     align-items: center;

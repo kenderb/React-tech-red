@@ -1,0 +1,42 @@
+.logout-button {
+  background: transparent linear-gradient(180deg, var(--primary-color) 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #FE4518 0%, #DF2330 100%) 0% 0% no-repeat padding-box;
+  border-radius: 0px 2px 3px 0px;
+  width: 284px;
+  height: 51px;
+  border: #CDCDCD 1px solid;
+  color: white;
+  box-shadow: #00000021 6px 9px 6px;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 5em;
+  letter-spacing: 0.1em;
+}
+.logout-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  color: var(--black-two);
+  
+}
+
+.logout-icon-container img {
+  width: 105.84px;
+  height: 82.42px;
+  margin-bottom: 1em;
+}
+
+.logout-wrapper {
+  padding-top: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: em;
+}
+
+@media screen and (min-width: 1024px) {
+  .display-header {
+    display: none;
+  }
+}
