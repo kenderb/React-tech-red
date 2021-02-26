@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { authUser } from '../actions';
+import logo from '../assets/images/logo.svg';
+import './Logo.style.css';
 
 const Login = ({ user, authUser }) => {
   const [email, setEmail] = useState('');
@@ -13,15 +15,20 @@ const Login = ({ user, authUser }) => {
     authUser({ email, password, type: 'User' });
   };
 
-  if (user.isLoggedIn) {
-    return <Redirect to="/" />;
-  }
+  if (user.isLoggedIn) return <Redirect to="/" />;
   return (
     <main>
-      <form onSubmit={e => handelSubmit(e)}>
-        <input onChange={e => setEmail(e.target.value)} type="email" placeholder="email" />
-        <input onChange={e => setPassword(e.target.value)} type="password" placeholder="password" />
-        <button type="submit">Login</button>
+      <form onSubmit={e => handelSubmit(e)} className="login-form">
+        <img src={logo} alt={logo} />
+        <p>Iniciar sesión</p>
+        <input onChange={e => setEmail(e.target.value)} type="email" placeholder="Correo electrónico" />
+        <input onChange={e => setPassword(e.target.value)} type="password" placeholder="Contrseña" />
+        <a href="/">Recordar mi contraseña</a>
+        <div className="button-containers">
+          <button type="submit" className="coloredButton">INGRESAR</button>
+          <div className="separator" />
+          <button type="button" className="simpleButton">Crear cuenta</button>
+        </div>
       </form>
     </main>
   );

@@ -1,0 +1,63 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-form img {
+  margin: 3.5em 0 2em;
+  width: 78.94px;
+}
+
+.login-form p {
+  color: var(--gray-one);
+  font-weight: bold;
+  font-size: 18px;
+  padding: 1em;
+  margin-bottom: 0.7em;
+}
+
+.login-form input {
+  outline: none;
+  width: 14em;
+  margin-top: 0.4em;
+  font-size: 16px;
+  border: none;
+  padding: 0.25em 0 0.2em 0;
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--gray-two);
+}
+
+.login-form a {
+  text-decoration: none;
+  color: var(--gray-one);
+}
+
+.button-containers {
+  height: 12em;
+  margin-top: 4.3em;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--gray-two);
+}
+
+.coloredButton, .simpleButton {
+  color: var(--gray-one);
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: transparent;
+  width: 219px;
+  font-size: 16px;
+  padding: 1em;
+}
+
+.coloredButton {
+  color: white;
+  background-color: var(--primary-color);
+}
