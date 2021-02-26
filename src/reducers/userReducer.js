@@ -1,4 +1,4 @@
-import { AUTH_SUCESS } from '../actions/constans';
+import { AUTH_SUCCESS } from '../actions/constans';
 
 const authState = {
   isLoggedIn: false,
@@ -10,7 +10,7 @@ const authState = {
 
 const userReducer = (state = authState, action) => {
   switch (action.type) {
-    case AUTH_SUCESS:
+    case AUTH_SUCCESS:
       localStorage.setItem('authUser', JSON.stringify({ jwttoken: action.payload.data.token }));
       return {
         ...state,

@@ -1,24 +1,30 @@
 import wonapp from '../api/wonapp';
 
 import {
-  authSuccess, authError,
-  dataLoading,
+  authSuccess, top10Succes,
 } from './actionTypes';
 
 export const authUser = authentication => async dispatch => {
   try {
-    dispatch(dataLoading());
     const response = await wonapp.post('/login', authentication);
     dispatch(authSuccess(response.data));
     return true;
   } catch (error) {
-    console.log(error.messages);
-    console.log(authError);
-    // dispatch(authError());
-    return false;
+    return error.messages;
   }
 };
 
-export const getCatalog = () => async dispatch => {
-  console.log(dispatch);
+export const getCatalog = jwttoken => async dispatch => {
+  try {
+    const response = await wonapp.get('/products/top', {
+      headers: {
+        Authorization: `Bearer ${jwttoken}`,
+      },
+    });
+    dispatch(top10Succes(response.data));
+
+    return true;
+  } catch (error) {
+    return error.messages;
+  }
 };
