@@ -5,7 +5,9 @@
   padding: 1em 3em 1em 3em;
   box-shadow: -3px 10px 6px var(--shadow-color);
 }
-
+.desktop-filter-button {
+  background-color: red;
+}
 .normal-button {
   color: var(--black-two);
   font-size: 0.9em;

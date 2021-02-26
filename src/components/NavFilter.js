@@ -53,6 +53,12 @@ const NavFilter = ({ getTop10, onFilter }) => {
             </button>
           </li>
         ))}
+        <li className="desktop-filter-button">
+          <button type="button"> orange button</button>
+        </li>
+        <li className="desktop-filter-button">
+          <button type="button"> maginify glass</button>
+        </li>
       </ul>
     </nav>
   );
