@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { getTop10Catalog, filterCatalog } from '../actions';
 import NavFilter from '../components/NavFilter';
 import NavHeader from '../components/NavHeader';
+import './Catalog.style.css';
 
 const Catalog = ({
   user, catalog, getTop10Catalog, filterCatalog,
@@ -32,13 +33,21 @@ const Catalog = ({
           getTop10={handleTop10Catalog}
           onFilter={HadleAppsFilter}
         />
-        <ul>
+        <ul className="catalog-list">
           {
             catalog.data.map(product => (
               <li key={product.id}>
-                <img src={product.image.thumb.url} alt={product.image} />
-                {product.name}
-                <p>{product.value}</p>
+                <div className="product-header-container">
+                  <img src={product.image.thumb.url} alt={product.image} />
+                  <b className="title-text">
+                    {product.name}
+                  </b>
+                  <p className="product-price">
+                    $
+                    {product.value}
+                  </p>
+                </div>
+                <p className="product-footer">Obtienes 2 puntos</p>
               </li>
             ))
           }

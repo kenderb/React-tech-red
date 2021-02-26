@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './NavFilter.style.css';
 
 const filterList = [
   {
@@ -11,11 +12,12 @@ const filterList = [
     name: 'recargas',
   },
 ];
+
 const NavFilter = ({ getTop10, onFilter }) => (
   <nav>
-    <ul>
+    <ul className="list-container">
       <li>
-        <button type="button" onClick={getTop10}> Top list </button>
+        <button type="button" onClick={getTop10}>top10</button>
       </li>
       {filterList.map(filter => (
         <li key={filter.id}>

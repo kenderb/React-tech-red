@@ -1,0 +1,22 @@
+.list-container {
+  background-color: white;
+  display: flex;
+  list-style: none;
+  padding: 1em 3em 1em 3em;
+  box-shadow: -3px 10px 6px var(--shadow-color);
+}
+
+.list-container button {
+  color: var(--black-two);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-right: 1.5em;
+  letter-spacing: 2px;
+}
+
+.actived-button {
+  border-bottom: 1px var(--primary-color)solid;
+}

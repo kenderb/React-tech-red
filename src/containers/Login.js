@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { authUser } from '../actions';
 import logo from '../assets/images/logo.svg';
 import logoWhite from '../assets/images/logo_white.svg';
-import './Logo.style.css';
+import './Login.style.css';
 
 const Login = ({ user, authUser }) => {
   const [email, setEmail] = useState('');

@@ -5,6 +5,11 @@
   justify-content: space-between;
 }
 
+body {
+  background-color: white;
+}
+
+
 .login-form img {
   margin: 3.5em 0 2em 0;
   width: 78.94px;
