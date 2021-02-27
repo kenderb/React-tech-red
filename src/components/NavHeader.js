@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './NavHeader.style.css';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import hamburger from '../assets/images/Hamburguesa.svg';
+import { toggleSideBar } from '../actions';
 
-const NavHeader = () => (
-  <header className="header-container">
-    <button type="button" onClick={() => console.log('hamburguer Clicked')} className="hamburguer-button">
-      <img src={hamburger} alt={hamburger} />
-    </button>
-  </header>
-);
+const NavHeader = ({ toggleSideBar }) => {
+  useEffect(() => {
+    toggleSideBar();
+  }, []);
+  return (
+    <header className="header-container">
+      <button type="button" onClick={() => toggleSideBar()} className="hamburguer-button">
+        <img src={hamburger} alt={hamburger} />
+      </button>
+    </header>
+  );
+};
 
-export default NavHeader;
+NavHeader.propTypes = {
+  toggleSideBar: PropTypes.func.isRequired,
+};
+export default connect(null, { toggleSideBar })(NavHeader);

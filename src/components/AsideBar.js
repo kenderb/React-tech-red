@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import asideMenuList from './constans';
 import './AsideBar.style.css';
 import MailLogo from '../assets/images/logo_white.svg';
 
-const AsideBar = () => (
-  <aside className="aside-bar" style={{ display: 'block' }}>
+const AsideBar = ({ sideBar }) => (
+  <aside className="aside-bar" style={{ display: sideBar ? 'block' : 'none' }}>
     <div className="main-image-container">
       <img src={MailLogo} alt={MailLogo} className="main-logo" />
     </div>
@@ -24,4 +26,12 @@ const AsideBar = () => (
   </aside>
 );
 
-export default AsideBar;
+const mapStateToProps = state => ({
+  sideBar: state.sideBar,
+});
+
+AsideBar.propTypes = {
+  sideBar: PropTypes.bool.isRequired,
+};
+
+export default connect(mapStateToProps)(AsideBar);
