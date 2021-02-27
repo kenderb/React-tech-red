@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import asideMenuList from './constans';
 import './AsideBar.style.css';
 import MailLogo from '../assets/images/logo_white.svg';
@@ -13,10 +14,10 @@ const AsideBar = () => (
       {
         asideMenuList.map(item => (
           <li key={item.key} className="item-container">
-            <a href={item.path}>
+            <Link to={item.path}>
               <img src={item.url} alt={item.url} />
               <p>{item.name}</p>
-            </a>
+            </Link>
           </li>
         ))
       }
