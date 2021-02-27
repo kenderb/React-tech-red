@@ -1,6 +1,7 @@
 import {
   AUTH_SUCCESS, TOP_10_SUCCESS,
   LOGOUT_USER, FILTER_SUCCESS,
+  SHOW_SIDE_BAR,
 } from './constans';
 
 export const authSuccess = data => ({
@@ -20,4 +21,8 @@ export const filterSuccess = catalogList => ({
 
 export const logOutUser = () => ({
   type: LOGOUT_USER,
+});
+
+export const showSideBar = () => ({
+  type: SHOW_SIDE_BAR,
 });

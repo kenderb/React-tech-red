@@ -5,10 +5,9 @@ import './AsideBar.style.css';
 import MailLogo from '../assets/images/logo_white.svg';
 
 const AsideBar = () => (
-  <aside className="aside-bar">
+  <aside className="aside-bar" style={{ display: 'block' }}>
     <div className="main-image-container">
       <img src={MailLogo} alt={MailLogo} className="main-logo" />
-
     </div>
     <ul>
       {

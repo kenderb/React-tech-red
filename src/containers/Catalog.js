@@ -34,7 +34,9 @@ const Catalog = ({
           getTop10={handleTop10Catalog}
           onFilter={HadleAppsFilter}
         />
+
         <AsideBar />
+
         <ul className="catalog-list">
           {
             catalog.data.map(product => (

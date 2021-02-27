@@ -3,6 +3,7 @@ import wonapp from '../api/wonapp';
 import {
   authSuccess, top10Succes,
   logOutUser, filterSuccess,
+  showSideBar,
 } from './actionTypes';
 
 export const authUser = authentication => async dispatch => {
@@ -47,3 +48,4 @@ export const filterCatalog = (jwttoken, category) => async dispatch => {
 };
 
 export const logOutSucces = () => (logOutUser());
+export const toggleSideBar = () => (showSideBar());
