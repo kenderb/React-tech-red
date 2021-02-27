@@ -6,25 +6,33 @@ import asideMenuList from './constans';
 import './AsideBar.style.css';
 import MailLogo from '../assets/images/logo_white.svg';
 
-const AsideBar = ({ sideBar }) => (
-  <aside className="aside-bar" style={{ display: sideBar ? 'block' : 'none' }}>
-    <div className="main-image-container">
-      <img src={MailLogo} alt={MailLogo} className="main-logo" />
-    </div>
-    <ul>
-      {
-        asideMenuList.map(item => (
-          <li key={item.key} className="item-container">
-            <Link to={item.path}>
-              <img src={item.url} alt={item.url} />
-              <p>{item.name}</p>
-            </Link>
-          </li>
-        ))
-      }
-    </ul>
-  </aside>
-);
+const AsideBar = ({ sideBar }) => {
+  const displaySideBar = () => {
+    if (window.innerWidth >= 1024) {
+      return 'block';
+    }
+    return sideBar ? 'block' : 'none';
+  };
+  return (
+    <aside className="aside-bar" style={{ display: displaySideBar() }}>
+      <div className="main-image-container">
+        <img src={MailLogo} alt={MailLogo} className="main-logo" />
+      </div>
+      <ul>
+        {
+          asideMenuList.map(item => (
+            <li key={item.key} className="item-container">
+              <Link to={item.path}>
+                <img src={item.url} alt={item.url} />
+                <p>{item.name}</p>
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </aside>
+  );
+};
 
 const mapStateToProps = state => ({
   sideBar: state.sideBar,
