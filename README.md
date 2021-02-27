@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Live version](https://happy-jepsen-5a5f2b.netlify.app)
+[Live version](https://clever-cray-468b87.netlify.app/)
 
 ## Prerequisites
 
