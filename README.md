@@ -13,11 +13,7 @@
 ## Demo Screenshots
 
 ![screenshot](Capture_01.JPG)
-![screenshot](Capture_02.JPG)
-![screenshot](Capture_03.JPG)
 ![screenshot](Capture_04.JPG)
-![screenshot](Capture_05.JPG)
-![screenshot](Capture_06.JPG)
 
 ## Live Demo
 
