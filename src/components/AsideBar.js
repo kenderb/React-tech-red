@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,23 +16,26 @@ const AsideBar = ({ sideBar, toggleSideBar }) => {
   }, []);
 
   return (
-    <aside className={`aside-bar ${displaySideBar()}`}>
-      <div className="main-image-container">
-        <img src={MailLogo} alt={MailLogo} className="main-logo" />
-      </div>
-      <ul>
-        {
-          asideMenuList.map(item => (
-            <li key={item.id} className="item-container">
-              <Link to={item.path} onClick={() => toggleSideBar()}>
-                <img src={item.url} alt={item.url} />
-                <p>{item.name}</p>
-              </Link>
-            </li>
-          ))
-        }
-      </ul>
-    </aside>
+    <>
+      <aside className={`aside-bar ${displaySideBar()}`}>
+        <div className="main-image-container">
+          <img src={MailLogo} alt={MailLogo} className="main-logo" />
+        </div>
+        <ul>
+          {
+            asideMenuList.map(item => (
+              <li key={item.id} className="item-container">
+                <Link to={item.path} onClick={() => toggleSideBar()}>
+                  <img src={item.url} alt={item.url} />
+                  <p>{item.name}</p>
+                </Link>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+      <div className={!sideBar ? 'black-bg' : ''} onClick={() => toggleSideBar()} />
+    </>
 
   );
 };
