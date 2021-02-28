@@ -1,5 +1,7 @@
 
 .aside-bar {
+  transform: scale(0.76);
+  transform-origin: top right;
   display: none;
   position: fixed;
   top: 50px;
@@ -42,6 +44,7 @@
 
 @media screen and (min-width: 1024px) { 
   .aside-bar {
+    transform: scale(1);
     position: relative;
     top: 0;
     right: 0;
