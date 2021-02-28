@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Live version](https://clever-cray-468b87.netlify.app/)
+[Live version](https://nifty-bartik-e35865.netlify.app/)
 
 ## Prerequisites
 
