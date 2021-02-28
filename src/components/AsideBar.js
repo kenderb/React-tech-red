@@ -11,9 +11,21 @@ import { toggleSideBar } from '../actions';
 
 const AsideBar = ({ sideBar, toggleSideBar }) => {
   const displaySideBar = () => (sideBar ? '' : 'toggle-display');
+
   useEffect(() => {
     toggleSideBar();
   }, []);
+
+  const getMenuList = () => (
+    asideMenuList.map(item => (
+      <li key={item.id} className="item-container">
+        <Link to={item.path} onClick={() => toggleSideBar()}>
+          <img src={item.url} alt={item.url} />
+          <p>{item.name}</p>
+        </Link>
+      </li>
+    ))
+  );
 
   return (
     <>
@@ -22,21 +34,11 @@ const AsideBar = ({ sideBar, toggleSideBar }) => {
           <img src={MailLogo} alt={MailLogo} className="main-logo" />
         </div>
         <ul>
-          {
-            asideMenuList.map(item => (
-              <li key={item.id} className="item-container">
-                <Link to={item.path} onClick={() => toggleSideBar()}>
-                  <img src={item.url} alt={item.url} />
-                  <p>{item.name}</p>
-                </Link>
-              </li>
-            ))
-          }
+          { getMenuList() }
         </ul>
       </aside>
       <div className={!sideBar ? 'black-bg' : ''} onClick={() => toggleSideBar()} />
     </>
-
   );
 };
 
