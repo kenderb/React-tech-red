@@ -1,7 +1,7 @@
 # React SPA
 
 > This project is a single page application built with React and Redux, All data used in the app was retrieved from the 
-> Provided API and it is stored in the Redux store, also you can filter by categories using the top Nav bar also you can 
+> Provided API and it is stored in the Redux store, you can filter by categories using the top Nav bar also you can 
 > log in and log out using the token generated for the API.
 ## Built With
 
