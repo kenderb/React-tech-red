@@ -41,6 +41,9 @@
   width: 30px;
   height: 30px;
 }
+.toggle-display {
+  display: block;
+}
 
 @media screen and (min-width: 1024px) { 
   .aside-bar {
@@ -51,4 +54,8 @@
     display: block;
     grid-area: sideBar;
   }
+  .toggle-display {
+    display: block;
+  }
+  
 }

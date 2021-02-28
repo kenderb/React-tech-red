@@ -8,18 +8,13 @@ import MailLogo from '../assets/images/logo_white.svg';
 import { toggleSideBar } from '../actions';
 
 const AsideBar = ({ sideBar, toggleSideBar }) => {
-  const displaySideBar = () => {
-    if (window.innerWidth >= 1024) {
-      return 'block';
-    }
-    return sideBar ? 'block' : 'none';
-  };
+  const displaySideBar = () => (sideBar ? '' : 'toggle-display');
   useEffect(() => {
     toggleSideBar();
   }, []);
 
   return (
-    <aside className="aside-bar" style={{ display: displaySideBar() }} name="aside bar">
+    <aside className={`aside-bar ${displaySideBar()}`}>
       <div className="main-image-container">
         <img src={MailLogo} alt={MailLogo} className="main-logo" />
       </div>
