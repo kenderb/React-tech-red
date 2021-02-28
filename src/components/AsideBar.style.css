@@ -1,6 +1,8 @@
 
 .aside-bar {
-  transform: scale(0.76);
+  z-index: 0;
+  padding-top: 3em;
+  height: 100vh;
   transform-origin: top right;
   display: none;
   position: fixed;
@@ -16,16 +18,14 @@
 }
 
 .main-image-container {
-  display: flex;
-  justify-content: center;
-  padding: 1em;
+  display: none;
 }
 .main-logo {
   margin: auto;
   width: 95px;
 }
 .item-container {
-  padding: 1em;
+  padding: 0.8em;
 }
 .item-container a {
   color: #ffffffc2;
@@ -38,16 +38,30 @@
   margin-left: 1em;
 }
 .item-container img {
-  width: 30px;
-  height: 30px;
+  margin-right: 1em;
+  width: 20px;
+  height: 20px;
 }
 .toggle-display {
   display: block;
 }
 
 @media screen and (min-width: 1024px) { 
+  .item-container img {
+    margin-right: 0;
+    width: 30px;
+    height: 30px;
+  }
+  .item-container {
+    padding: 1em;
+  }
+  .main-image-container {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+  }
   .aside-bar {
-    transform: scale(1);
+    padding-top: 0em;
     position: relative;
     top: 0;
     right: 0;

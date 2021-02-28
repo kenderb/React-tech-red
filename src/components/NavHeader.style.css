@@ -1,9 +1,13 @@
 .header-container {
+  z-index: 1;
   background-color: var(--primary-color);
   padding: 1em;
   display: flex;
   position: sticky;
   top: 0;
+}
+.hard-shadow {
+  box-shadow: #0000006e 0px 16px 50px;
 }
 .hamburguer-button {
   background-color: transparent;
